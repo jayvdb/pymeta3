@@ -9,4 +9,7 @@ install:
   - pip install .
   # The tests use twisted.trial
   - pip install twisted
-script: PYTHONPATH=$PYTHONPATH:. pytest
+script:
+  - python3 -c 'import html;print(dir(html), html.__path__);'
+  - PYTHONPATH=$PYTHONPATH:. python3 -c 'import html;print(dir(html), html.__path__);'
+  - PYTHONPATH=$PYTHONPATH:. pytest
