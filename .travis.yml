@@ -1,0 +1,12 @@
+language: python
+python:
+  - 3.6
+  - 2.7
+
+cache: pip
+
+install:
+  - pip install .
+  # The tests use twisted.trial
+  - pip install twisted
+script: PYTHONPATH=$PYTHONPATH:. pytest
